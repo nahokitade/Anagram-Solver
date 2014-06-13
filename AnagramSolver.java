@@ -12,6 +12,11 @@ import java.util.Set;
  * can be made, all the words that can be made, and all two word combination 
  * that can be made from the input.
  * 
+ * Put the dictionary.txt in a new folder called dictionary to connect the 
+ * .txt file without fiddling with the code. Else, change the filename
+ * portion of the main function to make the code work for any other .txt file
+ * with the same format as dictionary.txt.
+ * 
  * Assignment 1 of STEP at Google Tokyo, plus some extra functionality.
  * 
  * @author Naho Kitade
@@ -101,20 +106,28 @@ public class AnagramSolver{
 		String toSearchWord;
 		ArrayList<String> queue = new ArrayList<String>();
 		Hashtable<String, Integer> searchedHash = new Hashtable<String, Integer>();
+		
+		// sort first user input for easy search in hash
 		String sortedInput = QuickSort.sort(input);
-		queue.add(sortedInput);
-		searchedHash.put(sortedInput, CONTAINED);
-		while(!queue.isEmpty()){
+		queue.add(sortedInput);		// basically like a BFS algorithm. Add first sorted input into queue
+		searchedHash.put(sortedInput, CONTAINED);			// add to Hash to mark as visited.
+		
+		// go on until you go through all combinations (even with less characters) of the original
+		// sorted input
+		while(!queue.isEmpty()){	
+			// deque
 			String dequedWord = queue.remove(0);
-			if(dictHash.containsKey(dequedWord)){
-				result = dictHash.get(dequedWord);
-				break;
+			if(dictHash.containsKey(dequedWord)){		// if that word exists in dictionary, we found longest word
+				result = dictHash.get(dequedWord);	
+				break;																// break and return that word
 			}
+			// if that word was not in the library, add to the queue, all the different strings
+			// that can be made by taking away one of the characters from the string.
 			for(int i = 0; i < dequedWord.length(); i++){
 				toSearchWord = dequedWord.substring(0, i) + dequedWord.substring(i + 1, dequedWord.length());
-				if(searchedHash.containsKey(toSearchWord)) continue;
+				if(searchedHash.containsKey(toSearchWord)) continue;	// make sure that we haven't already visited that word.
 				queue.add(toSearchWord);
-				searchedHash.put(toSearchWord, CONTAINED);
+				searchedHash.put(toSearchWord, CONTAINED);						// mark that word as visited
 			}
 		}
 		return result;
@@ -139,14 +152,18 @@ public class AnagramSolver{
 		String sortedInput = QuickSort.sort(input);
 		queue.add(sortedInput);
 		searchedHash.put(sortedInput, CONTAINED);
+		// very similar function as findLongestWord, but instead of breaking this while loop
+		// after finding the first word, we continue adding to a Set of strings, all the different
+		// words that we found in the dictionary.
 		while(!queue.isEmpty()){
 			String dequedWord = queue.remove(0);
 			if(dictHash.containsKey(dequedWord)){
 				Set<String> resultAdd = dictHash.get(dequedWord);
 				for(String resultWord : resultAdd){
-					resultSet.add(resultWord);
+					resultSet.add(resultWord);			// the only different part. Just add the found word to a Set.
 				}
 			}
+			// same as findLongestWord function.
 			for(int i = 0; i < dequedWord.length(); i++){
 				toSearchWord = dequedWord.substring(0, i) + dequedWord.substring(i + 1, dequedWord.length());
 				if(searchedHash.containsKey(toSearchWord)) continue;
