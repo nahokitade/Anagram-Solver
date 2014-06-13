@@ -1,0 +1,17 @@
+TESTING for HW1 of STEP Google Tokyo, Japan
+
+Testing was quite difficult as it is hard to check if 
+the longest words, and other functions of the AnagramSolver
+as I could not completely make sure that the returned string/
+strings were infact the longest creatable word, etc. 
+
+Testing:
+1. tested on astronomer and amongst all the two combination words,
+was moon starer
+2. all small subfunctions that is directly used, such as sort in 
+QuickSort.java or leftChars function in AnagramSolver have been 
+unit testing, and have passed all edge case tests that I have done.
+3. As for the function that finds the longest word, the word that 
+gets returned is never a very short word, so hopefully it is infact
+the longest. 
+
