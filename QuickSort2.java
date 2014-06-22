@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
- * Class that implements the Quick Sort algorithm.
+ * Class that implements the Quick Sort algorithm for a DictionaryNode array.
  * Worst time: O(n^2) 
  * Average time: O(nlogn)
  * 
@@ -16,8 +16,8 @@ public class QuickSort2{
 	 * The final sorting function that ties every other
 	 * functions in this class together.
 	 * 
-	 * @toSort the string to sort
-	 * @return The sorted string is returned.
+	 * @toSort DictionaryNode array to sort
+	 * @return toSort will be sorted in place after execution of this function
 	 */
 	public static void sort(ArrayList<DictionaryNode> toSort){
 		// Call quick sort with the appropriate starting values
@@ -27,9 +27,9 @@ public class QuickSort2{
 	/*
 	 * The recursive portion of quick sort. 
 	 * 
-	 * @toSort the character array to sort
-	 * @low the smallest index value of the char array
-	 * @high the largest index value of the char array
+	 * @toSort the DictionaryNode array to sort
+	 * @low the smallest index value of the DictionaryNode array
+	 * @high the largest index value of the DictionaryNode array
 	 * @return the toSort will be completely sorted alphabetically once function
 	 * is done.
 	 */
@@ -44,9 +44,9 @@ public class QuickSort2{
 	/*
 	 * The partition function portion of quick sort.
 	 * 
-	 * @toSort the character array to sort
-	 * @low the smallest index value of the char array
-	 * @high the largest index value of the char array
+	 * @toSort the DictionaryNode array to sort
+	 * @low the smallest index value of the DictionaryNode array
+	 * @high the largest index value of the DictionaryNode array
 	 * @return the toSort will be completely partitioned 
 	 * alphabetically once function is done.
 	 */
@@ -86,32 +86,5 @@ public class QuickSort2{
 		DictionaryNode tempChar = toSort.get(ind1);
 		toSort.set(ind1, toSort.get(ind2));
 		toSort.set(ind2,tempChar);
-	}
-	
-	public static void main(String[] args) throws FileNotFoundException{
-		FileReader reader = new FileReader("dictionary/dictionary.txt");
-		Scanner in = new Scanner(reader);
-		ArrayList<DictionaryNode> dictWords = new ArrayList<DictionaryNode>();
-		int count = 0;
-		// read every line 
-		while(in.hasNextLine()) {
-
-			String word = (in.nextLine()).toLowerCase();
-			
-			if(word.length() > 16) continue;
-			
-			String sortedWord = QuickSort.sort(word);
-			DictionaryNode newDictNode = new DictionaryNode(word, sortedWord);
-			dictWords.add(newDictNode);
-		
-			count++;
-			
-		}
-		System.out.println(dictWords);
-		
-		sort(dictWords);
-		
-		System.out.println(dictWords);
-	
 	}
 }

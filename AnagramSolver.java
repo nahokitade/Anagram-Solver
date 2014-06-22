@@ -77,15 +77,22 @@ public class AnagramSolver{
 	 * 
 	 * @return the correct input from the user.
 	 */
-	public static String takeInput(){
+	public static String takeInput() throws IOException{
 		String inputString = "";
+		String inputBuffer = "";
 		int length = 0;								// keeps track if input is of correct length
 		Scanner input = new Scanner(System.in);
-		while (length != CHAR_LENGTH) {						// input must be CHAR_LENGTH length
-			System.out.print("Enter " + CHAR_LENGTH + " characters: ");
-			inputString = input.next();							// get input and its length
+		System.out.print("Enter " + CHAR_LENGTH + " characters: ");
+		do{						// input must be CHAR_LENGTH length
+			inputBuffer = input.next().toLowerCase();		
+			inputString = inputString + inputBuffer;						// get input and its length
 			length = inputString.length();
-		}
+			if(length > CHAR_LENGTH){
+				System.err.println("input length too long...");
+				inputString = "";
+				break;
+			}
+		}while (length != CHAR_LENGTH);
 		return inputString;						// return the final input
 	}
 
@@ -258,14 +265,17 @@ public class AnagramSolver{
 	 * The main program that demonstrates all the functions created in
 	 * this class. Includes user interaction for taking in inputs and commands.
 	 */
-	public static void main(String[] args){
+	public static void main(String[] args) throws IOException{
 		char command = ' ';      // a command
 		Scanner input2 = new Scanner(System.in);
 		
 		// quit qith q command
 		while (command != 'q'){
 			Hashtable<String, Set<String>> dictHash = readWordsToHash("dictionary/dictionary.txt");
+			
 			String input1 = takeInput();				// get character input from user
+			System.out.println(input1);
+			if(input1 == "") break;
 			
 			// get command input from user
 			System.out.println("Commands are\nq: quit\na: all words\nl: longest word\nc: combined two words ");

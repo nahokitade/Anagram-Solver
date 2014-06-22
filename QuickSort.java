@@ -1,5 +1,5 @@
 /*
- * Class that implements the Quick Sort algorithm.
+ * Class that implements the Quick Sort algorithm for strings.
  * Worst time: O(n^2) 
  * Average time: O(nlogn)
  * 
