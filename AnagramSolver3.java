@@ -34,7 +34,7 @@ public class AnagramSolver3{
 	 * The DictionaryNode array within the alphabet bucket array will be sorted in increasing 
 	 * length of words, with the last word inside the DictionaryNode array being the longest one.
 	 * 
-	 * @filename the txt file containing dictionary words.
+	 * @param filename the txt file containing dictionary words.
 	 * @return the created arraylist described above. 
 	 */
 	public static ArrayList<ArrayList<DictionaryNode>> readWordsToAlphaArray(String fileName) {
@@ -92,8 +92,8 @@ public class AnagramSolver3{
 	 * than the previously found longest word, then this is the new longest word.
 	 * Keep repeating the step for the shorter and shorter substrings until you find the longest word. 
 	 * 
-	 * @input input from the user
-	 * @dictAlphaArray the Array returned in the readWordsToAlphaArray function.
+	 * @param input input from the user
+	 * @param dictAlphaArray the Array returned in the readWordsToAlphaArray function.
 	 * @return Strings of the longest words that can be made from the given input 
 	 */
 	public static String findLongestWord(String input, ArrayList<ArrayList<DictionaryNode>> dictAlphaArray){
@@ -101,11 +101,16 @@ public class AnagramSolver3{
 		String sortedInput = QuickSort.sort(input);
 		String remainingSortedInput;
 		String longestWord = "";
+		char previousChar = '1'; 							// random character that should not be a part of the string input  
 		int index;
 		
 		for(int n = 0; n < sortedInput.length(); n++){
 			index = sortedInput.charAt(n) - 'a';
 			remainingSortedInput = sortedInput.substring(n);
+			
+			// if we have seen the same character before, we can skip it since we have looked for that
+			// character with a longer remainingSortedInput
+			if(previousChar == n) continue;
 			
 			// we have found the longest word already if the remaining substring of the input is 
 			// shorter than the longest word that we have previously found.

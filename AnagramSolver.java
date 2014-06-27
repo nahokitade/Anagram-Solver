@@ -34,7 +34,7 @@ public class AnagramSolver{
 	 * the key as a sorted version of the original word, and the 
 	 * original words corresponding to the sorted word as its value. 
 	 * 
-	 * @filename the txt file containing dictionary words.
+	 * @param filename the txt file containing dictionary words.
 	 * @return the created hashtable described above. 
 	 */
 	public static Hashtable<String, Set<String>> readWordsToHash(String fileName) {
@@ -101,8 +101,8 @@ public class AnagramSolver{
 	 * Function that handles the longest word that can be made
 	 * from a given input as an anagram.
 	 * 
-	 * @input input from the user
-	 * @dictHash the hashtable returned in the readWordsToHash
+	 * @param input input from the user
+	 * @param dictHash the hashtable returned in the readWordsToHash
 	 * function.
 	 * @return set of strings of the longest words that can be made
 	 * from the given input (if there are multiple of the same length
@@ -145,8 +145,8 @@ public class AnagramSolver{
 	 * Function that finds all words that can be made from a certain
 	 * input string from the user.
 	 * 
-	 * @input input from the user
-	 * @dictHash the hashtable returned in the readWordsToHash
+	 * @param input input from the user
+	 * @param dictHash the hashtable returned in the readWordsToHash
 	 * function.
 	 * @return set of strings of the all words that can be made
 	 * from the given input 
@@ -187,8 +187,8 @@ public class AnagramSolver{
 	 * Function that handles finding two word combinations from
 	 * the taken anagram input.
 	 * 
-	 * @input input from the user
-	 * @dictHash the hashtable returned in the readWordsToHash
+	 * @param input input from the user
+	 * @param dictHash the hashtable returned in the readWordsToHash
 	 * function.
 	 * @return set of strings of all two word combinations that 
 	 * can be made from the input.
@@ -220,8 +220,8 @@ public class AnagramSolver{
 	 * Function that returns the left over characters of the longerStr
 	 * after taking away all the characters of the shorterStr.
 	 * 
-	 * @longerStr The longer string to compare
-	 * @shorterStr The shorter string to compare
+	 * @param longerStr The longer string to compare
+	 * @param shorterStr The shorter string to compare
 	 * @return the string where the characters of the shorterStr is
 	 * taken away from the longerStr. Both strings must be in alphabetical
 	 * order.

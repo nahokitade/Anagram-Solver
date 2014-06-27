@@ -16,7 +16,7 @@ public class QuickSort2{
 	 * The final sorting function that ties every other
 	 * functions in this class together.
 	 * 
-	 * @toSort DictionaryNode array to sort
+	 * @param toSort DictionaryNode array to sort
 	 * @return toSort will be sorted in place after execution of this function
 	 */
 	public static void sort(ArrayList<DictionaryNode> toSort){
@@ -27,9 +27,9 @@ public class QuickSort2{
 	/*
 	 * The recursive portion of quick sort. 
 	 * 
-	 * @toSort the DictionaryNode array to sort
-	 * @low the smallest index value of the DictionaryNode array
-	 * @high the largest index value of the DictionaryNode array
+	 * @param toSort the DictionaryNode array to sort
+	 * @param low the smallest index value of the DictionaryNode array
+	 * @param high the largest index value of the DictionaryNode array
 	 * @return the toSort will be completely sorted alphabetically once function
 	 * is done.
 	 */
@@ -44,9 +44,9 @@ public class QuickSort2{
 	/*
 	 * The partition function portion of quick sort.
 	 * 
-	 * @toSort the DictionaryNode array to sort
-	 * @low the smallest index value of the DictionaryNode array
-	 * @high the largest index value of the DictionaryNode array
+	 * @param toSort the DictionaryNode array to sort
+	 * @param low the smallest index value of the DictionaryNode array
+	 * @param high the largest index value of the DictionaryNode array
 	 * @return the toSort will be completely partitioned 
 	 * alphabetically once function is done.
 	 */
@@ -77,9 +77,9 @@ public class QuickSort2{
 	/*
 	 * Function that swaps two elements in two indexes in a char array.
 	 * 
-	 * @ind1 index of first swapping element
-	 * @ind2 index of second swapping element
-	 * @toSort character array to swap elements
+	 * @param ind1 index of first swapping element
+	 * @param ind2 index of second swapping element
+	 * @param toSort character array to swap elements
 	 * @return the toSort will store the swapped elements character array.
 	 */
 	private static void swap(ArrayList<DictionaryNode> toSort, int ind1, int ind2){

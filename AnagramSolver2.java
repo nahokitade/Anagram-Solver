@@ -27,7 +27,7 @@ public class AnagramSolver2{
 	 * This array will be also sorted in increasing length of words, with the last
 	 * word inside the DictionaryNode being the longest one.
 	 * 
-	 * @filename the txt file containing dictionary words.
+	 * @param filename the txt file containing dictionary words.
 	 * @return the created arraylist described above. 
 	 */
 	public static ArrayList<DictionaryNode> readWordsToArray(String fileName) {
@@ -62,8 +62,8 @@ public class AnagramSolver2{
 	 * Function that handles the longest word that can be made
 	 * from a given input as an anagram.
 	 * 
-	 * @input input from the user
-	 * @dictArray the Array returned in the readWordsToArray
+	 * @param input input from the user
+	 * @param dictArray the Array returned in the readWordsToArray
 	 * function.
 	 * @return Strings of the longest words that can be made
 	 * from the given input 
@@ -87,8 +87,8 @@ public class AnagramSolver2{
 	 * Function that returns if the sortedWord can be made with the characters
 	 * in sortedInput
 	 * 
-	 * @sortedInput input from user that is sorted
-	 * @sortedWord sorted word to see if it can be made with the sortedInput
+	 * @param sortedInput input from user that is sorted
+	 * @param sortedWord sorted word to see if it can be made with the sortedInput
 	 * @return true or false indicating if the sortedWord can be made with the characters 
 	 */
 	public static Boolean canMakeWord(String sortedInput, String sortedWord){

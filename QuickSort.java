@@ -11,7 +11,7 @@ public class QuickSort{
 	 * The final sorting function that ties every other
 	 * functions in this class together.
 	 * 
-	 * @toSort the string to sort
+	 * @param toSort the string to sort
 	 * @return The sorted string is returned.
 	 */
 	public static String sort(String toSort){
@@ -25,9 +25,9 @@ public class QuickSort{
 	/*
 	 * The recursive portion of quick sort. 
 	 * 
-	 * @toSort the character array to sort
-	 * @low the smallest index value of the char array
-	 * @high the largest index value of the char array
+	 * @param toSort the character array to sort
+	 * @param low the smallest index value of the char array
+	 * @param high the largest index value of the char array
 	 * @return the toSort will be completely sorted alphabetically once function
 	 * is done.
 	 */
@@ -42,9 +42,9 @@ public class QuickSort{
 	/*
 	 * The partition function portion of quick sort.
 	 * 
-	 * @toSort the character array to sort
-	 * @low the smallest index value of the char array
-	 * @high the largest index value of the char array
+	 * @param toSort the character array to sort
+	 * @param low the smallest index value of the char array
+	 * @param high the largest index value of the char array
 	 * @return the toSort will be completely partitioned 
 	 * alphabetically once function is done.
 	 */
@@ -75,9 +75,9 @@ public class QuickSort{
 	/*
 	 * Function that swaps two elements in two indexes in a char array.
 	 * 
-	 * @ind1 index of first swapping element
-	 * @ind2 index of second swapping element
-	 * @toSort character array to swap elements
+	 * @param ind1 index of first swapping element
+	 * @param ind2 index of second swapping element
+	 * @param toSort character array to swap elements
 	 * @return the toSort will store the swapped elements character array.
 	 */
 	private static void swap(char[] toSort, int ind1, int ind2){

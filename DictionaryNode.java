@@ -15,8 +15,8 @@ public class DictionaryNode {
 
 	/*
 	 * The only constructor of the DictionaryNode.
-	 * @sort sorted dictionary word
-	 * @unsort unsorted dictionary word
+	 * @param sort sorted dictionary word
+	 * @param unsort unsorted dictionary word
 	 */
 	public DictionaryNode(String sort, String unsort){
 		this.sorted = sort;				
