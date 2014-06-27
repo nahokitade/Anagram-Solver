@@ -3,6 +3,8 @@ README for HW1 of STEP Google Tokyo, Japan
 The Anagram Solver includes the main function to demonstrate the 
 functionality of the first assignment, plus a few extra functionalities.
 
+Anagram Solver 2 and 3 only implement the basic function to solve a anagram problem but uses different implementations.
+
 The main function uses the dictionary.txt file as the dictionary, but
 another file can be used by changing the fileName portion of the main
 function, in the formatting of the file is similar to dictionary.txt

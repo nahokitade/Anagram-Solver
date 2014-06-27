@@ -9,8 +9,7 @@ Testing:
 1. tested on astronomer and amongst all the two combination words,
 was moon starer
 2. all small subfunctions that is directly used, such as sort in 
-QuickSort.java or leftChars function in AnagramSolver have been 
-unit testing, and have passed all edge case tests that I have done.
+QuickSort.java or leftChars function in AnagramSolver have gone through a simple unit testing, and have passed all edge case tests that I have done.
 3. As for the function that finds the longest word, the word that 
 gets returned is never a very short word, so hopefully it is infact
 the longest. 
