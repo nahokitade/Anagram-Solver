@@ -1,5 +1,3 @@
-README for HW1 of STEP Google Tokyo, Japan
-
 The Anagram Solver includes the main function to demonstrate the 
 functionality of the first assignment, plus a few extra functionalities.
 
